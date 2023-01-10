@@ -89,15 +89,15 @@ class train_config:
 
     # datasets
     # dataset_train = "datasets_grammar/gtrain_150K.csv"
-    dataset_train = "/workspace/data/lchu/gtrain_1M.csv"  # /workspace/data/lchu/gtrain_10M.csv, /workspace/data/lchu/gtrain_150K.csv
+    dataset_train = "/workspace/data/t5-default-dataset/gtrain_1M.csv"  # /workspace/data/lchu/gtrain_10M.csv, /workspace/data/lchu/gtrain_150K.csv
     dataset_test = "datasets_grammar/grammar_validation.csv"
 
     # training
-    batch_size: int = int(os.getenv("BATCH_SIZE", "50"))
-    num_epochs: int = 2
+    batch_size: int = int(os.getenv("BATCH_SIZE", "40"))
+    num_epochs: int = 1
 
     # validation
-    run_validation: bool = True
+    run_validation: bool = False
     val_batch_size = 8
     block_for_validation: bool = False
 
