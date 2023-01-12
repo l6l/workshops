@@ -498,7 +498,7 @@ def fsdp_main(args):
 
     # you can run profiling by un-commenting the below section.  Note that you will likely want to just profile
     # for a small set and smaller model (logs get very big, very fast).
-    torch_profiler = None
+    #torch_profiler = None
     torch_profiler = torch.profiler.profile(
         activities=[
             torch.profiler.ProfilerActivity.CPU,
@@ -506,7 +506,7 @@ def fsdp_main(args):
         ],
         schedule=torch.profiler.schedule(wait=1, warmup=2, active=3, repeat=1),
         on_trace_ready=torch.profiler.tensorboard_trace_handler(
-            "profile_traces"
+            "/workspace/data/ptprf/profile_traces"
         ),
         profile_memory=True,
         with_stack=False,
