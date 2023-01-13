@@ -506,7 +506,7 @@ def fsdp_main(args):
         ],
         schedule=torch.profiler.schedule(wait=1, warmup=2, active=3, repeat=1),
         on_trace_ready=torch.profiler.tensorboard_trace_handler(
-            "/workspace/data/ptprf/profile_traces"
+            "profile_traces"
         ),
         profile_memory=True,
         with_stack=False,
